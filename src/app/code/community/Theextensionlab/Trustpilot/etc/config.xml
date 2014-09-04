@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Theextensionlab_Trustpilot>
+            <version>0.1.0</version>
+        </Theextensionlab_Trustpilot>
+    </modules>
+    <global>
+        <blocks>
+            <theextensionlab_trustpilot>
+                <class>Theextensionlab_Trustpilot_Block</class>
+            </theextensionlab_trustpilot>
+        </blocks>
+
+        <helpers>
+            <theextensionlab_trustpilot>
+                <class>Theextensionlab_Trustpilot_Helper</class>
+            </theextensionlab_trustpilot>
+        </helpers>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <theextensionlab_trustpilot>
+                    <file>theextensionlab/trustpilot.xml</file>
+                </theextensionlab_trustpilot>
+            </updates>
+        </layout>
+    </frontend>
+</config>

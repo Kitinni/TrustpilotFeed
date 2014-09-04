@@ -192,6 +192,11 @@ app/design/adminhtml/default/default/layout/**/*
 !app/design/adminhtml/default/default/template/webtise/*
 !app/design/adminhtml/default/default/layout/webtise/*
 
+!app/code/community/
+app/code/community/**/*
+!app/code/community/Theextensionlab/*
+
+
 app/code/local/Amasty
 js/amasty/
 app/etc/modules/Amasty_Base.xml
