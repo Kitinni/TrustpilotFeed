@@ -1,2 +1,4 @@
-Empty README
-============
+TrustpilotFeed
+==============
+
+Trustpilot feed for Magento
