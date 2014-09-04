@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Theextensionlab_Trustpilot>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+            </depends>
+        </Theextensionlab_Trustpilot>
+    </modules>
+</config>
