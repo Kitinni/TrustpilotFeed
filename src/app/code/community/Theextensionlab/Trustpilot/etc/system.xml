@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!--
+/**
+* The Extension Lab
+*
+* @category    Theextensionlab
+* @package     Theextensionlab_Trustpilot
+* @copyright   Copyright (c) 2014 The Extension Lab (http://www.theextensionlab.com)
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+* @author      James Anelay <jamesanelay@theextensionlab.com>
+*/
+-->
+<config>
+    <tabs>
+        <theextensionlab translate="label" module="theextensionlab_trustpilot">
+            <!-- @ToDo Change this to a logo. -->
+            <label>The Extension Lab</label>
+            <sort_order>100</sort_order>
+        </theextensionlab>
+    </tabs>
+
+    <sections>
+        <theextensionlab_trustpilot_settings>
+            <label>The Extension Lab</label>
+            <sort_order>5</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>theextensionlab</tab>
+            <groups>
+                <feed_fundamental>
+                    <label>Feed Information</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <feed_url>
+                            <label>Feed Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please select your .json.gz url that can be found in your trustpilot dashboard here. <a target="_blank" href="https://en-us.b2b.trustpilot.com/ng1/modules/plugins">Get your feed url</a> ]]></comment>
+                        </feed_url>
+
+                        <show_default_feed>
+                            <label>Show Default Feed</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[By Default this extension will add a feed to the right sidebar. However you can also add them using widgets, if you'd like to do that you can turn the default feed off. <a target="_blank" href="#">Click here to see the WIKI on adding the feed using widgets</a>]]></comment>
+                        </show_default_feed>
+                    </fields>
+                </feed_fundamental>
+                <feed_basic_settings>
+                    <label>Feed Basic Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_header>
+                            <label>Show Header</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_header>
+                        <show_reviews>
+                            <label>Show Reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_reviews>
+                        <!-- Number of reviews :: default to 10-->
+                    </fields>
+                </feed_basic_settings>
+
+                <feed_advances_settings>
+                    <label>Feed Advanced Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+
+                        <!-- Height type :: Dynamic / Fixed -->
+                        <height_type>
+                            <label>Height Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_heighttype</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </height_type>
+
+                        <!-- If Dynamic :: Min Height -->
+                        <min-height>
+                            <label>Min Height</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_class>theextensionlab-pixels</frontend_class>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number</validate>
+                            <can_be_empty>1</can_be_empty>
+                            <depends><height_type>dynamic</height_type></depends>
+                        </min-height>
+
+                        <!-- IF FIXED :: Height -->
+                        <height>
+                            <label>Height</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_class>theextensionlab-pixels</frontend_class>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number</validate>
+                            <can_be_empty>1</can_be_empty>
+                            <depends><height_type>fixed</height_type></depends>
+                        </height>
+
+
+                        <!-- Show company rating as text yes/no-->
+                        <show_company_rating_as_text>
+                            <label>Show Company Rating As Text</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_company_rating_as_text>
+
+                        <!-- "Amount of reviews" text -->
+                        <show_amount_of_reviews_text>
+                            <label>Show Amount of Reviews Text</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_amount_of_reviews_text>
+
+                        <!-- Display date -->
+                        <show_date>
+                            <label>Show Date</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_date>
+
+                        <!--  Display user images -->
+                        <show_user_images>
+                            <label>Display User Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_user_images>
+
+                        <!-- Display reviews in popup -->
+                        <show_reviews_in_popup>
+                            <label>Show Reviews In Popup</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_reviews_in_popup>
+
+                        <!-- Custom Styles -->
+                    </fields>
+                </feed_advances_settings>
+
+            </groups>
+        </theextensionlab_trustpilot_settings>
+    </sections>
+</config>

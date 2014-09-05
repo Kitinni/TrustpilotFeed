@@ -23,6 +23,12 @@
             </theextensionlab_trustpilot>
         </blocks>
 
+        <models>
+            <theextensionlab_trustpilot>
+                <class>Theextensionlab_Trustpilot_Model</class>
+            </theextensionlab_trustpilot>
+        </models>
+
         <helpers>
             <theextensionlab_trustpilot>
                 <class>Theextensionlab_Trustpilot_Helper</class>
@@ -39,4 +45,20 @@
             </updates>
         </layout>
     </frontend>
+
+    <default>
+        <theextensionlab_trustpilot_settings>
+            <feed_fundamental>
+                <feed_url>http://s.trustpilot.com/tpelements/917278/f.json.gz</feed_url>
+                <show_default_feed>1</show_default_feed>
+            </feed_fundamental>
+            <feed_basic_settings>
+                <show_header>1</show_header>
+                <show_reviews>1</show_reviews>
+            </feed_basic_settings>
+            <feed_advanced_settings>
+
+            </feed_advanced_settings>
+        </theextensionlab_trustpilot_settings>
+    </default>
 </config>
