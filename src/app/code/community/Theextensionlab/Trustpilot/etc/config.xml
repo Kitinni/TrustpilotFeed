@@ -36,6 +36,16 @@
         </helpers>
     </global>
 
+    <adminhtml>
+        <layout>
+            <updates>
+                <theextensionlab_trustpilot>
+                    <file>theextensionlab/trustpilot.xml</file>
+                </theextensionlab_trustpilot>
+            </updates>
+        </layout>
+    </adminhtml>
+
     <frontend>
         <layout>
             <updates>
@@ -50,6 +60,7 @@
         <theextensionlab_trustpilot_settings>
             <feed_fundamental>
                 <feed_url>http://s.trustpilot.com/tpelements/917278/f.json.gz</feed_url>
+                <review_count>5</review_count>
                 <show_default_feed>1</show_default_feed>
             </feed_fundamental>
             <feed_basic_settings>
@@ -57,7 +68,10 @@
                 <show_reviews>1</show_reviews>
             </feed_basic_settings>
             <feed_advanced_settings>
-
+                <show_user_images>1</show_user_images>
+                <show_company_rating_as_text>1</show_company_rating_as_text>
+                <show_amount_of_reviews_text>1</show_amount_of_reviews_text>
+                <show_date>1</show_date>
             </feed_advanced_settings>
         </theextensionlab_trustpilot_settings>
     </default>

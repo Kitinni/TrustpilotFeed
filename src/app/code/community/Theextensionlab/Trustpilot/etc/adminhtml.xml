@@ -8,10 +8,10 @@
                         <children>
                             <config>
                                 <children>
-                                    <theextensionlab>
+                                    <theextensionlab_trustpilot_settings>
                                         <title>The Extension Lab</title>
                                         <sort_order>10</sort_order>
-                                    </theextensionlab>
+                                    </theextensionlab_trustpilot_settings>
                                 </children>
                             </config>
                         </children>

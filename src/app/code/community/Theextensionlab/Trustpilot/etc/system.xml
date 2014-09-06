@@ -21,7 +21,7 @@
 
     <sections>
         <theextensionlab_trustpilot_settings>
-            <label>The Extension Lab</label>
+            <label>TrustBox Feed</label>
             <sort_order>5</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
@@ -35,6 +35,7 @@
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
                     <fields>
                         <feed_url>
                             <label>Feed Url</label>
@@ -45,6 +46,18 @@
                             <show_in_store>1</show_in_store>
                             <comment><![CDATA[Please select your .json.gz url that can be found in your trustpilot dashboard here. <a target="_blank" href="https://en-us.b2b.trustpilot.com/ng1/modules/plugins">Get your feed url</a> ]]></comment>
                         </feed_url>
+
+                        <!-- Height type :: Dynamic / Fixed -->
+                        <review_count>
+                            <label>Review Count</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_reviewcount</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number</validate>
+                        </review_count>
 
                         <show_default_feed>
                             <label>Show Default Feed</label>
@@ -79,7 +92,7 @@
                             <label>Show Reviews</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>10</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -88,7 +101,7 @@
                     </fields>
                 </feed_basic_settings>
 
-                <feed_advances_settings>
+                <feed_advanced_settings>
                     <label>Feed Advanced Settings</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>30</sort_order>
@@ -108,23 +121,9 @@
                             <show_in_store>1</show_in_store>
                         </height_type>
 
-                        <!-- If Dynamic :: Min Height -->
-                        <min-height>
-                            <label>Min Height</label>
-                            <frontend_type>text</frontend_type>
-                            <frontend_class>theextensionlab-pixels</frontend_class>
-                            <sort_order>10</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <validate>validate-number</validate>
-                            <can_be_empty>1</can_be_empty>
-                            <depends><height_type>dynamic</height_type></depends>
-                        </min-height>
-
                         <!-- IF FIXED :: Height -->
-                        <height>
-                            <label>Height</label>
+                        <review_section_height>
+                            <label>Review Section Height</label>
                             <frontend_type>text</frontend_type>
                             <frontend_class>theextensionlab-pixels</frontend_class>
                             <sort_order>10</sort_order>
@@ -134,7 +133,7 @@
                             <validate>validate-number</validate>
                             <can_be_empty>1</can_be_empty>
                             <depends><height_type>fixed</height_type></depends>
-                        </height>
+                        </review_section_height>
 
 
                         <!-- Show company rating as text yes/no-->
@@ -146,17 +145,19 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <tooltip><![CDATA[This feature allows you to turn on or off the Company Text Rating.]]></tooltip>
                         </show_company_rating_as_text>
 
                         <!-- "Amount of reviews" text -->
                         <show_amount_of_reviews_text>
-                            <label>Show Amount of Reviews Text</label>
+                            <label>Show Amount of Reviews Text 11</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>100</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <tooltip><![CDATA[This feature will turn on or off the number of reviews text.]]></tooltip>
                         </show_amount_of_reviews_text>
 
                         <!-- Display date -->
@@ -190,11 +191,12 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <tooltip><![CDATA[This feature allows you to have your reviews appear in a pop up box, rather than opening a new window.]]></tooltip>
                         </show_reviews_in_popup>
 
                         <!-- Custom Styles -->
                     </fields>
-                </feed_advances_settings>
+                </feed_advanced_settings>
 
             </groups>
         </theextensionlab_trustpilot_settings>

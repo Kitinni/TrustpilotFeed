@@ -26,7 +26,7 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
                 }
             }
             // Get the JSON feed and gzunpack
-            $file = gzdecode( file_get_contents("http://s.trustpilot.com/tpelements/917278/f.json.gz") );
+            $file = gzdecode( file_get_contents($this->getFeedUrl()) );
             // JSON decode the string
             $json = json_decode($file);
 
@@ -37,5 +37,72 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         }
 
         return false;
+    }
+
+    public function getReviewSectionStyle(){
+        $height = Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_section_height');
+
+        if(!$height){
+            return;
+        }
+        $style='style="';
+        $style.='height:'.$height.'px;';
+        $style.='"';
+
+        return $style;
+    }
+
+    public function getFeedUrl(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/feed_url');
+    }
+
+    public function getReviewCount(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/review_count');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowHeader(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_header');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowReviews(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_reviews');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowUserImages(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_user_images');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowCompanyRatingAsText(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_company_rating_as_text');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowAmountOfReviewsText(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_amount_of_reviews_text');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCanShowDate(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_date');
+    }
+
+    public function getHeightType(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/height_type');
     }
 }
