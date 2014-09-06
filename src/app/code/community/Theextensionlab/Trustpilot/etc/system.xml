@@ -194,7 +194,15 @@
                             <tooltip><![CDATA[This feature allows you to have your reviews appear in a pop up box, rather than opening a new window.]]></tooltip>
                         </show_reviews_in_popup>
 
-                        <!-- Custom Styles -->
+                        <review_character_limit>
+                            <label>Review Character Limit</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </review_character_limit>
                     </fields>
                 </feed_advanced_settings>
 

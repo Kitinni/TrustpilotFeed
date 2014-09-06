@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+* The Extension Lab
+*
+* @category    Theextensionlab
+* @package     Theextensionlab_Trustpilot
+* @copyright   Copyright (c) 2014 The Extension Lab (http://www.theextensionlab.com)
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+* @author      James Anelay <jamesanelay@theextensionlab.com>
+*/
+-->
+
+<widgets>
+    <theextensionlab_trustbox_widget type="theextensionlab_trustpilot/widget_trustbox" translate="name description" module="theextensionlab_trustpilot">
+        <name>Trustbox Widget - TheExtensionLab</name>
+        <description>Adds a trustbox on your website</description>
+        <parameters>
+            <template translate="label">
+                <label>Template</label>
+                <visible>1</visible>
+                <type>select</type>
+                <value>theextensionlab/trustpilot/reviews-feed.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>theextensionlab/trustpilot/reviews-feed.phtml</value>
+                        <label>Default Trustbox Template</label>
+                    </default>
+                </values>
+                <sort_order>10</sort_order>
+            </template>
+            <feed_url>
+                <label>Feed Url</label>
+                <visible>1</visible>
+                <type>text</type>
+                <sort_order>20</sort_order>
+            </feed_url>
+            <show_header translate="label">
+                <visible>1</visible>
+                <label>Show Header</label>
+                <type>select</type>
+                <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_yesnodefault</source_model>
+                <sort_order>30</sort_order>
+            </show_header>
+            <show_reviews>
+                <visible>1</visible>
+                <label>Show Reviews</label>
+                <type>select</type>
+                <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_yesnodefault</source_model>
+                <sort_order>40</sort_order>
+            </show_reviews>
+        </parameters>
+    </theextensionlab_trustbox_widget>
+</widgets>

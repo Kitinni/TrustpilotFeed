@@ -12,11 +12,6 @@
 
 class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
 {
-
-    public function __construct(){
-
-    }
-
     public function getReviewsFeed(){
         try{
             // If PHP >= 5.4 we'll have gzdecode function, if PHP >= 4.0.1 we use gzuncompress
@@ -104,5 +99,9 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
 
     public function getHeightType(){
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/height_type');
+    }
+
+    public function getReviewCharacterLimit(){
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_character_limit');
     }
 }
