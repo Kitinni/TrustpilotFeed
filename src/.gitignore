@@ -177,8 +177,8 @@ app/design/frontend/base/default/**/*
 !app/design/frontend/base/default/layout/*
 app/design/frontend/base/default/template/**/*
 app/design/frontend/base/default/layout/**/*
-!app/design/frontend/base/default/template/webtise/*
-!app/design/frontend/base/default/layout/webtise/*
+!app/design/frontend/base/default/template/theextensionlab/*
+!app/design/frontend/base/default/layout/theextensionlab/*
 
 !app/design/adminhtml/default/
 
@@ -189,8 +189,8 @@ app/design/adminhtml/default/default/**/*
 !app/design/adminhtml/default/default/layout/*
 app/design/adminhtml/default/default/template/**/*
 app/design/adminhtml/default/default/layout/**/*
-!app/design/adminhtml/default/default/template/webtise/*
-!app/design/adminhtml/default/default/layout/webtise/*
+!app/design/adminhtml/default/default/template/theextensionlab/*
+!app/design/adminhtml/default/default/layout/theextensionlab/*
 
 !app/code/community/
 app/code/community/**/*
