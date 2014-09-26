@@ -10,8 +10,11 @@
  */
 
 /**
- * Used in creating options for Yes|No config value selection
+ * Trustbox height type by source model
  *
+ * @category   Theextensionlab
+ * @package    Theextensionlab_Trustpilot
+ * @author     James Anelay <jamesanelay@theextensionlab.com>
  */
 class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Heighttype
 {

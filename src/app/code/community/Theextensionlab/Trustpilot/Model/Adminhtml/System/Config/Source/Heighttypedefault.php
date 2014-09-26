@@ -9,24 +9,16 @@
  * @author      James Anelay <jamesanelay@theextensionlab.com>
  */
 
-
 /**
- * Trustbox yes|no|default options
+ * Trustbox height type by source model, with option to revert to default for widgets
+ * dynamic|fixed|default
  *
  * @category   Theextensionlab
  * @package    Theextensionlab_Trustpilot
  * @author     James Anelay <jamesanelay@theextensionlab.com>
  */
-class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Yesnodefault
+class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Heighttypedefault
 {
-
-    /**
-     * Note: Ideally I would have had the yes / no values as 1 and 0 respectivly
-     * but this seems to make No the defualt which I didn't want.
-     * If anybody knows how to properly set the default please
-     * do let me know! <jamesanelay@theextensionlab.com>
-     */
-
 
     /**
      * Options getter
@@ -36,9 +28,9 @@ class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Yesnodefau
     public function toOptionArray()
     {
         return array(
+            array('value' => 'dynamic', 'label'=>Mage::helper('adminhtml')->__('Dynamic')),
+            array('value' => 'fixed', 'label'=>Mage::helper('adminhtml')->__('Fixed')),
             array('value' => 'default', 'label'=>Mage::helper('adminhtml')->__('Use Config Default')),
-            array('value' => 'yes', 'label'=>Mage::helper('adminhtml')->__('Yes')),
-            array('value' => 'no', 'label'=>Mage::helper('adminhtml')->__('No')),
         );
     }
 
@@ -50,9 +42,9 @@ class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Yesnodefau
     public function toArray()
     {
         return array(
-            'default' => Mage::helper('adminhtml')->__('Use Config Setting'),
-            'no'=> Mage::helper('adminhtml')->__('No'),
-            'yes' => Mage::helper('adminhtml')->__('Yes'),
+            'dynamic' => Mage::helper('adminhtml')->__('No'),
+            'fixed' => Mage::helper('adminhtml')->__('Yes'),
+            'default' => Mage::helper('adminhtml')->__('Use Config Default'),
         );
     }
 

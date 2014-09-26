@@ -9,7 +9,13 @@
  * @author      James Anelay <jamesanelay@theextensionlab.com>
  */
 
-
+/**
+ * Trustpilot TrustBox Helper
+ *
+ * @category   Theextensionlab
+ * @package    Theextensionlab_Trustpilot
+ * @author     James Anelay <jamesanelay@theextensionlab.com>
+ */
 class Theextensionlab_Trustpilot_Helper_Data extends Mage_Core_Helper_Abstract
 {
 

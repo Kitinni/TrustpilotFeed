@@ -10,13 +10,30 @@
  * @author      James Anelay <jamesanelay@theextensionlab.com>
  */
 
+
+/**
+ * Trustpilot TrustBox Block
+ *
+ * @category   Theextensionlab
+ * @package    Theextensionlab_Trustpilot
+ * @author     James Anelay <jamesanelay@theextensionlab.com>
+ */
+
 class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
 {
-    public function getReviewsFeed(){
+
+    /**
+     * Gets the whole reviews feed from trustpilot.
+     *
+     * @return bool|mixed
+     */
+    public function getReviewsFeed()
+    {
         try{
             // If PHP >= 5.4 we'll have gzdecode function, if PHP >= 4.0.1 we use gzuncompress
-            if(!function_exists("gzdecode")) {
-                function gzdecode($data) {
+            if (!function_exists("gzdecode")) {
+                function gzdecode($data)
+                {
                     return gzuncompress($data);
                 }
             }
@@ -34,10 +51,16 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         return false;
     }
 
-    public function getReviewSectionStyle(){
-        $height = Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_section_height');
+    /**
+     * Gets review styling - specificly the height if the height is set to be fixed.
+     *
+     * @return string
+     */
+    public function getReviewSectionStyle()
+    {
+        $height = $this->getReviewSectionHeight();
 
-        if(!$height){
+        if (!$height) {
             return;
         }
         $style='style="';
@@ -47,61 +70,121 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         return $style;
     }
 
-    public function getFeedUrl(){
+    /**
+     * Get review section height
+     *
+     * @return mixed
+     */
+    public function getReviewSectionHeight()
+    {
+        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_section_height');
+    }
+
+    /**
+     * Get trustpilot json feed url
+     *
+     * @return mixed
+     */
+    public function getFeedUrl()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/feed_url');
     }
 
-    public function getReviewCount(){
+    /**
+     * Get review count
+     *
+     * @return mixed
+     */
+    public function getReviewCount()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/review_count');
     }
 
     /**
+     * Get if the header section is set to be visible or not
+     *
      * @return mixed
      */
-    public function getCanShowHeader(){
+    public function getCanShowHeader()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_header');
     }
 
     /**
+     * Get if the reviews section is set to be visible or not
+     *
      * @return mixed
      */
-    public function getCanShowReviews(){
+    public function getCanShowReviews()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_reviews');
     }
 
     /**
+     * Get if the feed is set to show user images or not.
+     *
      * @return mixed
      */
-    public function getCanShowUserImages(){
-        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_user_images');
+    public function getCanShowUserImages()
+    {
+        return Mage::getStoreConfig(
+            'theextensionlab_trustpilot_settings/feed_advanced_settings/show_user_images'
+        );
     }
 
     /**
+     * Get if the company rating text e.g "Excellent" is set to be visible or not
+     *
      * @return mixed
      */
-    public function getCanShowCompanyRatingAsText(){
-        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_company_rating_as_text');
+    public function getCanShowCompanyRatingAsText()
+    {
+        return Mage::getStoreConfig(
+            'theextensionlab_trustpilot_settings/feed_advanced_settings/show_company_rating_as_text'
+        );
     }
 
     /**
+     * Get amount of reviews
+     *
      * @return mixed
      */
-    public function getCanShowAmountOfReviewsText(){
-        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_amount_of_reviews_text');
+    public function getCanShowAmountOfReviewsText()
+    {
+        return Mage::getStoreConfig(
+            'theextensionlab_trustpilot_settings/feed_advanced_settings/show_amount_of_reviews_text'
+        );
     }
 
     /**
+     * Get if the date the review was submitted is set to be visible or not
+     *
      * @return mixed
      */
-    public function getCanShowDate(){
+    public function getCanShowDate()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_date');
     }
 
-    public function getHeightType(){
+    /**
+     * Get height type. e.g fixed or dynamic
+     *
+     * @return mixed
+     */
+    public function getHeightType()
+    {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/height_type');
     }
 
-    public function getReviewCharacterLimit(){
-        return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_character_limit');
+    /**
+     * Get limit for reviews text.
+     *
+     * @return mixed
+     */
+    public function getReviewCharacterLimit()
+    {
+        return Mage::getStoreConfig(
+            'theextensionlab_trustpilot_settings/feed_advanced_settings/review_character_limit'
+        );
     }
 }
