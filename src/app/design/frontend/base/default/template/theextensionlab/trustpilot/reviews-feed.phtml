@@ -1,0 +1,53 @@
+<?php $_trustpilotReviewsFeed = $this->getReviewsFeed(); ?>
+
+<?php if($_trustpilotReviewsFeed && ($this->getCanShowHeader() || $this->getCanShowReviews())):?>
+<div class="tp-box <?php if($this->getHeightType()): echo $this->getHeightType(); endif;?>">
+    <?php if($this->getCanShowHeader()):?>
+        <header>
+            <?php if($this->getCanShowCompanyRatingAsText()):?>
+                <h1><?php echo $_trustpilotReviewsFeed->TrustScore->Human; ?></h1>
+            <?php endif;?>
+            <img class="top-stars" src="<?php echo $_trustpilotReviewsFeed->TrustScore->StarsImageUrls->large; ?>" alt="stars"/>
+            <?php if($this->getCanShowAmountOfReviewsText()):?>
+                <p class="review-count"><?php echo $this->__('%s customers have written a review on Trustpilot',$_trustpilotReviewsFeed->ReviewCount->Total);?></p>
+            <?php endif;?>
+        </header>
+    <?php endif;?>
+
+    <?php if($this->getCanShowReviews()):?>
+        <h2 id="header-reviews">Selected reviews</h2>
+        <section class="reviews" <?php if($this->getHeightType() == "fixed"): echo $this->getReviewSectionStyle(); endif;?>>
+
+            <?php $i = $this->getReviewCount();?>
+            <?php foreach($_trustpilotReviewsFeed->Reviews as $review):?>
+                <?php if($i-- === 0):?>
+                    <?php break; ?>
+                <?php endif;?>
+                <article>
+                    <img src="<?php echo $review->TrustScore->StarsImageUrls->small; ?>" alt="review stars"/>
+                    <?php if($this->getCanShowDate()):?>
+                        <time datetime="<?php echo date('c',$review->Created->UnixTime); ?>"><?php echo $review->Created->HumanDate; ?></time>
+                    <?php endif;?>
+                    <h3><?php echo $review->Title; ?></h3>
+                    <p class="desc">
+                        <?php if($this->getReviewCharacterLimit()):?>
+                            <?php echo substr($review->Content, 0, $this->getReviewCharacterLimit()); ?>
+                        <?php else:?>
+                            <?php echo $review->Content; ?>
+                        <?php endif;?>
+                        <a href="<?php echo $review->Url; ?>" target="_blank"><?php echo $this->__('Read More');?></a></p>
+                    <?php if($this->getCanShowUserImages()):?>
+                        <img src="<?php echo $review->User->ImageUrls->i24; ?>" alt="<?php echo $review->User->Name; ?>" class="user-img" />
+                    <?php endif;?>
+                    <p class="author">
+                        <?php echo $review->User->Name; ?><br />
+                        <?php echo $review->User->City; ?>
+                    </p>
+                </article>
+            <?php endforeach;?>
+        </section>
+    <?php endif;?>
+</div>
+<style>
+</style>
+<?php endif;?>

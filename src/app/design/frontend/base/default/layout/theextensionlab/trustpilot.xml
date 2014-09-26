@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>theextensionlab/trustpilot/css/tp-box.css</name></action>
+        </reference>
+
+        <reference name="right">
+            <block type="theextensionlab_trustpilot/feed" name="trustpilot.feed" as="trustpilotFeed" template="theextensionlab/trustpilot/reviews-feed.phtml"/>
+        </reference>
+    </default>
+
+</layout>
