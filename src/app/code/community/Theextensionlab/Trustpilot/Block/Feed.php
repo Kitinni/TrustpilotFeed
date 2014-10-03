@@ -29,11 +29,15 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
     public function getReviewsFeed()
     {
         try{
+            if(!$this->getFeedUrl()){
+                return false;
+            }
+
             // If PHP >= 5.4 we'll have gzdecode function, if PHP >= 4.0.1 we use gzuncompress
             if (!function_exists("gzdecode")) {
                 function gzdecode($data)
                 {
-                    return gzuncompress($data);
+                    return gzinflate(substr($data,10,-8));
                 }
             }
             // Get the JSON feed and gzunpack
@@ -56,8 +60,12 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
 
     public function url_get_contents ($url) {
         try{
-            if (!function_exists('curl_init')){
-                Mage::log('Please enabled curl for the Trustpilot_Trustfeed to work.', Zend_Log::ERR, 'TEL_trustpilot_exception.log');
+            if (!is_callable('curl_init')){
+                if(ini_get('allow_url_fopen')){
+                    return file_get_contents($url);
+                }
+
+                Mage::throwException('Please enabled curl or allow_url_fopen to allow Trustpilot_Trustbox to fetch the reviews feed.');
                 return false;
             }
             $ch = curl_init();
