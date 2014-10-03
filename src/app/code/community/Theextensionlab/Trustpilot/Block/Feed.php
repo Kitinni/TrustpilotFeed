@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The Extension Lab
@@ -38,13 +37,37 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
                 }
             }
             // Get the JSON feed and gzunpack
-            $file = gzdecode( file_get_contents($this->getFeedUrl()) );
+            $file = gzdecode( $this->url_get_contents($this->getFeedUrl()) );
             // JSON decode the string
             $json = json_decode($file);
 
             return $json;
         }
         catch (Exception $e) {
+            Mage::log($e->__toString(), Zend_Log::ERR, 'TEL_trustpilot_exception.log');
+        }
+
+        return false;
+    }
+
+    public function getJsonFeedContent(){
+
+    }
+
+    public function url_get_contents ($url) {
+        try{
+            if (!function_exists('curl_init')){
+                Mage::log('Please enabled curl for the Trustpilot_Trustfeed to work.', Zend_Log::ERR, 'TEL_trustpilot_exception.log');
+                return false;
+            }
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $output = curl_exec($ch);
+            curl_close($ch);
+
+            return $output;
+        }catch (Exception $e) {
             Mage::log($e->__toString(), Zend_Log::ERR, 'TEL_trustpilot_exception.log');
         }
 

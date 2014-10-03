@@ -14,7 +14,7 @@
 <config>
     <modules>
         <Theextensionlab_Trustpilot>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Theextensionlab_Trustpilot>
     </modules>
     <global>
