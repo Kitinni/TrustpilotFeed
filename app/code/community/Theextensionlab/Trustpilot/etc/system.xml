@@ -13,7 +13,6 @@
 <config>
     <tabs>
         <theextensionlab translate="label" module="theextensionlab_trustpilot">
-            <!-- @ToDo Change this to a logo. -->
             <label>The Extension Lab</label>
             <sort_order>100</sort_order>
         </theextensionlab>
