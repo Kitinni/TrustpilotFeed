@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<package>
+    <name>Theextensionlab_Trustpilot</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/OSL-3.0">OSL 3.0</license>
+    <channel>community</channel>
+    <extends />
+    <summary>This extension adds the ability to add trustpilot's trustbox to your Magento Store via php.</summary>
+    <description>This extension adds the ability to add trustpilot's trustbox to your Magento Store via php. Improving page load time compared to the javascript version and improving readability of those reviews for search engines.</description>
+    <notes>Makes use of Varien_Http_Client</notes>
+    <authors>
+        <author>
+            <name>James Anelay</name>
+            <user>TheExtensionLab</user>
+            <email>james@theextensionlab.com</email>
+        </author>
+    </authors>
+    <date>2015-04-12</date>
+    <time>16:46:36</time>
+    <contents>
+        <target name="mageetc">
+            <dir name="modules">
+                <file name="Theextensionlab_Trustpilot.xml" hash="ca49d5084e103d7b15160fd2bf918efa" />
+            </dir>
+        </target>
+        <target name="magecommunity">
+            <dir name="Theextensionlab">
+                <dir name="Trustpilot">
+                    <dir name="Block">
+                        <file name="Feed.php" hash="ee7474d5ca2c855bb77d7e7e39045150" />
+                        <dir name="Widget">
+                            <file name="Trustbox.php" hash="b27661f794f3e937d18ab7c916eaa0ef" />
+                        </dir>
+                    </dir>
+                    <dir name="Helper">
+                        <file name="Data.php" hash="59ed23ada878a2894cb3df12c7f1ce28" />
+                    </dir>
+                    <dir name="Model">
+                        <dir name="Adminhtml">
+                            <dir name="System">
+                                <dir name="Config">
+                                    <dir name="Source">
+                                        <file name="Heighttype.php" hash="d62ce83040c7662557bfcdd9a87e5737" />
+                                        <file name="Heighttypedefault.php" hash="5cae132728dc2ec6e00093284bb6b696" />
+                                        <file name="Reviewcount.php" hash="57bfba7f2e4770fa5d24c8d85c870b59" />
+                                        <file name="Yesnodefault.php" hash="95f2ac6531b4fa97d1ce99b985fafbc0" />
+                                    </dir>
+                                </dir>
+                            </dir>
+                        </dir>
+                        <dir name="Feed">
+                            <file name="Importer.php" hash="a0d70659dbd0c059aa8ea2a2328e97dc" />
+                        </dir>
+                    </dir>
+                    <dir name="etc">
+                        <file name="adminhtml.xml" hash="081e6ee03946f99fcf3e29d7a0fe62d8" />
+                        <file name="config.xml" hash="be725f56ed298af88368edabef190553" />
+                        <file name="system.xml" hash="2f7fad302f38439a4fd1bd46bfb2ee25" />
+                        <file name="widget.xml" hash="d769aa85cf8353aebed33d40ec665a15" />
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="magedesign">
+            <dir name="frontend">
+                <dir name="base">
+                    <dir name="default">
+                        <dir name="template">
+                            <dir name="theextensionlab">
+                                <dir name="trustpilot">
+                                    <file name="reviews-feed.phtml" hash="9b116640c5553429cd92ed69dad4aeb1" />
+                                </dir>
+                            </dir>
+                        </dir>
+                        <dir name="layout">
+                            <dir name="theextensionlab">
+                                <file name="trustpilot.xml" hash="9e12cbc36855c9033b8fbce91e06cc03" />
+                            </dir>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+            <dir name="adminhtml">
+                <dir name="default">
+                    <dir name="default">
+                        <dir name="layout">
+                            <dir name="theextensionlab">
+                                <file name="trustpilot.xml" hash="7a45c64a387a40c61a70ebf69a80a2f6" />
+                            </dir>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="mageskin">
+            <dir name="frontend">
+                <dir name="base">
+                    <dir name="default">
+                        <dir name="theextensionlab">
+                            <dir name="trustpilot">
+                                <dir>
+                                    <dir name="css">
+                                        <file name="tp-box.css" hash="e850ab01254c4bb9bc364a47ee01629f" />
+                                    </dir>
+                                </dir>
+                            </dir>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+    </contents>
+    <compatible />
+    <dependencies>
+        <required>
+            <php>
+                <min>5.1.0</min>
+                <max>6.0.0</max>
+            </php>
+        </required>
+    </dependencies>
+</package>
