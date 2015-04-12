@@ -16,6 +16,7 @@
         <name>Trustbox Widget - TheExtensionLab</name>
         <description>Adds a trustbox on your website</description>
         <parameters>
+
             <template translate="label">
                 <label>Template</label>
                 <visible>1</visible>
@@ -29,6 +30,7 @@
                 </values>
                 <sort_order>10</sort_order>
             </template>
+
             <feed_url>
                 <label>Feed Url</label>
                 <visible>1</visible>
@@ -36,6 +38,7 @@
                 <sort_order>20</sort_order>
                 <description><![CDATA[If empty value configured under System > Configuration will be used.]]></description>
             </feed_url>
+
             <show_header translate="label">
                 <visible>1</visible>
                 <label>Show Header</label>
@@ -43,6 +46,7 @@
                 <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_yesnodefault</source_model>
                 <sort_order>30</sort_order>
             </show_header>
+
             <show_reviews>
                 <visible>1</visible>
                 <label>Show Reviews</label>
@@ -51,7 +55,6 @@
                 <sort_order>40</sort_order>
             </show_reviews>
 
-            <!--<height_type-->
             <height_type translate="label">
                 <visible>1</visible>
                 <label>Height Type</label>
@@ -60,7 +63,6 @@
                 <sort_order>50</sort_order>
             </height_type>
 
-            <!--<review_section_height>-->
             <review_section_height>
                 <label>Review Section Height (If Height Type = fixed)</label>
                 <visible>1</visible>
@@ -69,7 +71,6 @@
                 <description><![CDATA[PX units are assumed so enter just a number e.g 500. If empty value configured under System > Configuration will be used.]]></description>
             </review_section_height>
 
-            <!--<show_company_rating_as_text>-->
             <show_company_rating_as_text>
                 <visible>1</visible>
                 <label>Show Company Rating As Text</label>
@@ -78,7 +79,6 @@
                 <sort_order>70</sort_order>
             </show_company_rating_as_text>
 
-            <!--<show_amount_of_reviews_text>-->
             <show_amount_of_reviews_text>
                 <visible>1</visible>
                 <label>Show Amount Of Reviews Text</label>
@@ -87,7 +87,6 @@
                 <sort_order>80</sort_order>
             </show_amount_of_reviews_text>
 
-            <!--<show_date>-->
             <show_date>
                 <visible>1</visible>
                 <label>Show Date</label>
@@ -96,7 +95,6 @@
                 <sort_order>90</sort_order>
             </show_date>
 
-            <!--<show_user_images>-->
             <show_user_images>
                 <visible>1</visible>
                 <label>Show User Images</label>
@@ -104,8 +102,6 @@
                 <source_model>theextensionlab_trustpilot/adminhtml_system_config_source_yesnodefault</source_model>
                 <sort_order>100</sort_order>
             </show_user_images>
-
-            <!--<review_character_limit>-->
 
         </parameters>
     </theextensionlab_trustbox_widget>
