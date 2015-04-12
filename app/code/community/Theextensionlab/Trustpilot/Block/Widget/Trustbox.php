@@ -22,21 +22,11 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
     implements Mage_Widget_Block_Interface
 {
 
-    /**
-     * Render block HTML
-     *
-     * @return string
-     */
     protected function _toHtml()
     {
         return parent::_toHtml();
     }
 
-    /**
-     * Get widget feed url
-     *
-     * @return mixed
-     */
     public function getFeedUrl()
     {
         $feedUrl = $this->getData('feed_url');
@@ -48,11 +38,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getFeedUrl();
     }
 
-    /**
-     * Get review section height
-     *
-     * @return mixed
-     */
     public function getReviewSectionHeight()
     {
         $reviewSectionHeight = $this->getData('review_section_height');
@@ -64,12 +49,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getReviewSectionHeight();
     }
 
-
-    /**
-     * Get height type. e.g fixed or dynamic
-     *
-     * @return mixed
-     */
     public function getHeightType()
     {
         $heightType = $this->getData('height_type');
@@ -81,11 +60,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return $heightType;
     }
 
-    /**
-     * Get if the header section is set to be visible or not
-     *
-     * @return int|mixed
-     */
     public function getCanShowHeader()
     {
         $showHeader = $this->getData('show_header');
@@ -101,11 +75,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getCanShowHeader();
     }
 
-    /**
-     * Get if the reviews section is set to be visible or not
-     *
-     * @return int|mixed
-     */
     public function getCanShowReviews()
     {
         $showReviews = $this->getData('show_reviews');
@@ -121,11 +90,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getCanShowReviews();
     }
 
-    /**
-     * Get if the feed is set to show user images or not.
-     *
-     * @return int|mixed
-     */
     public function getCanShowUserImages()
     {
         $showUserImages = $this->getData('show_user_images');
@@ -141,11 +105,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getCanShowUserImages();
     }
 
-    /**
-     * Get amount of reviews
-     *
-     * @return int|mixed
-     */
     public function getCanShowAmountOfReviewsText()
     {
         $showAmtOfReviews = $this->getData('show_amount_of_reviews_text');
@@ -161,11 +120,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getCanShowAmountOfReviewsText();
     }
 
-    /**
-     * Get if the date the review was submitted is set to be visible or not
-     *
-     * @return int|mixed
-     */
     public function getCanShowDate()
     {
         $showDate = $this->getData('show_date');
@@ -181,11 +135,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::getCanShowDate();
     }
 
-    /**
-     * Get if the company rating text e.g "Excellent" is set to be visible or not
-     *
-     * @return int|mixed
-     */
     public function getCanShowCompanyRatingAsText()
     {
         $showRatingAsText = $this->getData('show_company_rating_as_text');

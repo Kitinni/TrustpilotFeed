@@ -101,61 +101,31 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         return $style;
     }
 
-    /**
-     * Get review section height
-     *
-     * @return mixed
-     */
     public function getReviewSectionHeight()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/review_section_height');
     }
 
-    /**
-     * Get trustpilot json feed url
-     *
-     * @return mixed
-     */
     public function getFeedUrl()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/feed_url');
     }
 
-    /**
-     * Get review count
-     *
-     * @return mixed
-     */
     public function getReviewCount()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_fundamental/review_count');
     }
 
-    /**
-     * Get if the header section is set to be visible or not
-     *
-     * @return mixed
-     */
     public function getCanShowHeader()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_header');
     }
 
-    /**
-     * Get if the reviews section is set to be visible or not
-     *
-     * @return mixed
-     */
     public function getCanShowReviews()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_basic_settings/show_reviews');
     }
 
-    /**
-     * Get if the feed is set to show user images or not.
-     *
-     * @return mixed
-     */
     public function getCanShowUserImages()
     {
         return Mage::getStoreConfig(
@@ -163,11 +133,6 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         );
     }
 
-    /**
-     * Get if the company rating text e.g "Excellent" is set to be visible or not
-     *
-     * @return mixed
-     */
     public function getCanShowCompanyRatingAsText()
     {
         return Mage::getStoreConfig(
@@ -175,11 +140,6 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         );
     }
 
-    /**
-     * Get amount of reviews
-     *
-     * @return mixed
-     */
     public function getCanShowAmountOfReviewsText()
     {
         return Mage::getStoreConfig(
@@ -187,31 +147,16 @@ class Theextensionlab_Trustpilot_Block_Feed extends Mage_Core_Block_Template
         );
     }
 
-    /**
-     * Get if the date the review was submitted is set to be visible or not
-     *
-     * @return mixed
-     */
     public function getCanShowDate()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/show_date');
     }
 
-    /**
-     * Get height type. e.g fixed or dynamic
-     *
-     * @return mixed
-     */
     public function getHeightType()
     {
         return Mage::getStoreConfig('theextensionlab_trustpilot_settings/feed_advanced_settings/height_type');
     }
 
-    /**
-     * Get limit for reviews text.
-     *
-     * @return mixed
-     */
     public function getReviewCharacterLimit()
     {
         return Mage::getStoreConfig(
