@@ -1,0 +1,6 @@
+app/etc/modules/Theextensionlab_Trustpilot.xml  app/etc/modules/Theextensionlab_Trustpilot.xml
+app/code/community/Theextensionlab/Trustpilot/  app/code/community/Theextensionlab/Trustpilot/
+app/design/frontend/base/default/template/theextensionlab/trustpilot/   app/design/frontend/base/default/template/theextensionlab/trustpilot/
+app/design/frontend/base/default/layout/theextensionlab/trustpilot.xml app/design/frontend/base/default/layout/theextensionlab/trustpilot.xml
+app/design/adminhtml/default/default/layout/theextensionlab/trustpilot.xml  app/design/adminhtml/default/default/layout/theextensionlab/trustpilot.xml
+skin/frontend/base/default/theextensionlab/trustpilot/  skin/frontend/base/default/theextensionlab/trustpilot/
