@@ -27,17 +27,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
         return parent::_toHtml();
     }
 
-    public function getFeedUrl()
-    {
-        $feedUrl = $this->getData('feed_url');
-
-        if ($feedUrl) {
-            return $feedUrl;
-        }
-
-        return parent::getFeedUrl();
-    }
-
     public function getReviewSectionHeight()
     {
         $reviewSectionHeight = $this->getData('review_section_height');
