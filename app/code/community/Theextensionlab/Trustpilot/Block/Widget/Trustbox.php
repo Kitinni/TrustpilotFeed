@@ -22,11 +22,6 @@ class Theextensionlab_Trustpilot_Block_Widget_Trustbox
     implements Mage_Widget_Block_Interface
 {
 
-    protected function _toHtml()
-    {
-        return parent::_toHtml();
-    }
-
     public function getFeedUrl()
     {
         $feedUrl = $this->getData('feed_url');
