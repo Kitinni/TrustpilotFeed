@@ -46,7 +46,6 @@
                             <comment><![CDATA[Please select your .json.gz url that can be found in your trustpilot dashboard here. <a target="_blank" href="https://en-us.b2b.trustpilot.com/ng1/modules/plugins">Get your feed url</a> ]]></comment>
                         </feed_url>
 
-                        <!-- Height type :: Dynamic / Fixed -->
                         <review_count>
                             <label>Review Count</label>
                             <frontend_type>select</frontend_type>
@@ -96,7 +95,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </show_reviews>
-                        <!-- Number of reviews :: default to 10-->
                     </fields>
                 </feed_basic_settings>
 
@@ -108,8 +106,6 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-
-                        <!-- Height type :: Dynamic / Fixed -->
                         <height_type>
                             <label>Height Type</label>
                             <frontend_type>select</frontend_type>
@@ -120,7 +116,6 @@
                             <show_in_store>1</show_in_store>
                         </height_type>
 
-                        <!-- IF FIXED :: Height -->
                         <review_section_height>
                             <label>Review Section Height</label>
                             <frontend_type>text</frontend_type>
@@ -134,8 +129,6 @@
                             <depends><height_type>fixed</height_type></depends>
                         </review_section_height>
 
-
-                        <!-- Show company rating as text yes/no-->
                         <show_company_rating_as_text>
                             <label>Show Company Rating As Text</label>
                             <frontend_type>select</frontend_type>
@@ -147,7 +140,6 @@
                             <tooltip><![CDATA[This feature allows you to turn on or off the Company Text Rating.]]></tooltip>
                         </show_company_rating_as_text>
 
-                        <!-- "Amount of reviews" text -->
                         <show_amount_of_reviews_text>
                             <label>Show Amount of Reviews Text</label>
                             <frontend_type>select</frontend_type>
@@ -159,7 +151,6 @@
                             <tooltip><![CDATA[This feature will turn on or off the number of reviews text.]]></tooltip>
                         </show_amount_of_reviews_text>
 
-                        <!-- Display date -->
                         <show_date>
                             <label>Show Date</label>
                             <frontend_type>select</frontend_type>
@@ -170,7 +161,6 @@
                             <show_in_store>1</show_in_store>
                         </show_date>
 
-                        <!--  Display user images -->
                         <show_user_images>
                             <label>Display User Images</label>
                             <frontend_type>select</frontend_type>
@@ -180,18 +170,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </show_user_images>
-
-                        <!-- @ToDo: Add this feature -->
-                        <!--<show_reviews_in_popup>-->
-                            <!--<label>Show Reviews In Popup</label>-->
-                            <!--<frontend_type>select</frontend_type>-->
-                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
-                            <!--<sort_order>100</sort_order>-->
-                            <!--<show_in_default>1</show_in_default>-->
-                            <!--<show_in_website>1</show_in_website>-->
-                            <!--<show_in_store>1</show_in_store>-->
-                            <!--<tooltip><![CDATA[This feature allows you to have your reviews appear in a pop up box, rather than opening a new window.]]></tooltip>-->
-                        <!--</show_reviews_in_popup>-->
 
                         <review_character_limit>
                             <label>Review Character Limit</label>
