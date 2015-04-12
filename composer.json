@@ -1,0 +1,16 @@
+{
+  "name":"theextensionlab/trustpilot",
+  "license":"OSL-3.0",
+  "type":"magento-module",
+  "homepage":"http://www.theextensionlab.com/magento/trustpilot",
+  "description":"Magento extension to add trustpilot feed to Magento via PHP",
+  "authors":[
+    {
+      "name":"James Anelay",
+      "email":"james@theextensionlab.com"
+    }
+  ],
+  "require":{
+    "magento-hackathon/magento-composer-installer":"*"
+  }
+}
