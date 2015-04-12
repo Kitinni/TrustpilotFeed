@@ -9,34 +9,23 @@
  * @author      James Anelay <jamesanelay@theextensionlab.com>
  */
 
-/**
- * Trustbox height type by source model
- *
- * @category   Theextensionlab
- * @package    Theextensionlab_Trustpilot
- * @author     James Anelay <jamesanelay@theextensionlab.com>
- */
 class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Heighttype
 {
 
-    /**
-     * Options getter
-     *
-     * @return array
-     */
     public function toOptionArray()
     {
         return array(
-            array('value' => 'dynamic', 'label'=>Mage::helper('adminhtml')->__('Dynamic')),
-            array('value' => 'fixed', 'label'=>Mage::helper('adminhtml')->__('Fixed')),
+            array(
+                'value' => 'dynamic',
+                'label' => Mage::helper('adminhtml')->__('Dynamic')
+            ),
+            array(
+                'value' => 'fixed',
+                'label' => Mage::helper('adminhtml')->__('Fixed')
+            ),
         );
     }
 
-    /**
-     * Get options in "key-value" format
-     *
-     * @return array
-     */
     public function toArray()
     {
         return array(

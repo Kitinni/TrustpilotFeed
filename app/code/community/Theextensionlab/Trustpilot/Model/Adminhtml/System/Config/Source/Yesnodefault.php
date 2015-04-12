@@ -9,44 +9,25 @@
  * @author      James Anelay <jamesanelay@theextensionlab.com>
  */
 
-
-/**
- * Trustbox yes|no|default options
- *
- * @category   Theextensionlab
- * @package    Theextensionlab_Trustpilot
- * @author     James Anelay <jamesanelay@theextensionlab.com>
- */
 class Theextensionlab_Trustpilot_Model_Adminhtml_System_Config_Source_Yesnodefault
 {
 
-    /**
-     * Note: Ideally I would have had the yes / no values as 1 and 0 respectivly
-     * but this seems to make No the defualt which I didn't want.
-     * If anybody knows how to properly set the default please
-     * do let me know! <jamesanelay@theextensionlab.com>
-     */
-
-
-    /**
-     * Options getter
-     *
-     * @return array
-     */
     public function toOptionArray()
     {
         return array(
-            array('value' => 'default', 'label'=>Mage::helper('adminhtml')->__('Use Config Default')),
-            array('value' => 'yes', 'label'=>Mage::helper('adminhtml')->__('Yes')),
-            array('value' => 'no', 'label'=>Mage::helper('adminhtml')->__('No')),
+            array(
+                'value' => 'default',
+                'label'=>Mage::helper('adminhtml')->__('Use Config Default')
+            ),
+            array('value' => 'yes',
+                  'label'=>Mage::helper('adminhtml')->__('Yes')
+            ),
+            array('value' => 'no',
+                  'label'=>Mage::helper('adminhtml')->__('No')
+            ),
         );
     }
 
-    /**
-     * Get options in "key-value" format
-     *
-     * @return array
-     */
     public function toArray()
     {
         return array(

@@ -10,8 +10,6 @@
  */
 
 /**
- * Trustpilot TrustBox Helper
- *
  * @category   Theextensionlab
  * @package    Theextensionlab_Trustpilot
  * @author     James Anelay <jamesanelay@theextensionlab.com>
